@@ -1,0 +1,186 @@
+# Exercise 1
+def double(my_number)
+  my_number * 2
+end
+
+puts double(20)
+puts double(40)
+puts double(80)
+
+
+
+
+# Exercise 2
+def negative?(my_number)
+  my_number < 0
+end
+
+puts "Please enter a number: "
+number = gets.chomp.to_i
+result = negative?(my_number)
+
+if result == false
+  puts "The number #{number} is positive"
+else
+  puts "The number #{number} is negative"
+end
+
+
+
+
+# Exercise 3
+def  is_even?(my_number)
+  my_number % 2 == 0
+end
+
+puts "Please enter a number: "
+number = gets.chomp.to_i
+result = is_even?(my_number)
+
+if result == false
+  puts "The number #{number} is odd"
+else
+  puts "The number #{number} is even"
+end
+
+
+
+
+# Exercise 4
+def method(string)
+  string.length > 8
+end
+
+puts "Please enter word with 8 or more characters: "
+string = gets.chomp
+result = method(string)
+
+if result == false
+  puts "The word '#{string}' is too short."
+else
+  puts "The word '#{string}' is valid."
+end
+
+
+
+
+# Exercise 5
+def greet_backwards(name)
+  "Hello, #{name.reverse}! Welcome home."
+  "Hello, #{(name.reverse)*2}! Welcome home."
+end
+
+puts greet_backwards("Bob")
+puts greet_backwards("Shirly")
+puts greet_backwards("Sue")
+puts greet_backwards("Andy")
+
+
+
+
+# Exercise 6
+def fahrenheit_to_celsius(fahrenheit)
+  celsius = (fahrenheit - 32) * 5/9
+end
+
+puts "Please enter a temperture value in Fahrenheit you wish to convert: "
+fahrenheit = gets.chomp.to_i
+result = fahrenheit_to_celsius(fahrenheit)
+puts "#{fahrenheit} degrees Fahrenheit has been converted to #{result} degrees Celsius."
+
+
+
+
+# Exercise 7
+def wrap_text(text, symbol)
+  "#{symbol}#{text}#{symbol}"
+end
+
+puts "Please enter your text here: "
+text = gets.chomp
+puts "Please enter the symbols you wish to attach for decoration: "
+symbol = gets.chomp
+result = wrap_text(text, symbol)
+puts result
+
+
+puts "Please enter your text here: "
+text = gets.chomp
+puts "Please enter the symbols you wish to attach for decoration: "
+symbol = gets.chomp
+
+first_result = wrap_text(text, symbol)
+puts first_result
+
+puts "Please enter another symbol: "
+second_symbol = gets.chomp
+second_result = wrap_text(first_result, second_symbol)
+puts second_result
+
+puts "Please enter another symbol: "
+third_symbol = gets.chomp
+third_result = wrap_text(second_result, third_symbol)
+puts third_result
+
+
+
+
+# Exercise 8
+
+# puts "How far did person 1 run (in metres)?"
+# distance1 = gets.to_f
+# puts "How long (in minutes) did person 1 run take to run #{distance1} metres?"
+# mins1 = gets.to_f
+#
+# puts "How far did person 2 run (in metres)?"
+# distance2 = gets.to_f
+# puts "How long (in minutes) did person 2 take to run #{distance2} metres?"
+# mins2 = gets.to_f
+#
+# puts "How far did person 3 run (in metres)?"
+# distance3 = gets.to_f
+# puts "How long (in minutes) did person 3 take to run #{distance3} metres?"
+# mins3 = gets.to_f
+#
+# secs1 = mins1 * 60
+# speed1 = distance1/secs1
+# secs2 = mins2 * 60
+# speed2 = distance2/secs2
+# secs3 = mins3 * 60
+# speed3 = distance3/secs3
+#
+# if speed3 > speed2 && speed3 > speed1
+#   puts "Person 3 was the fastest at #{speed3} m/s"
+# elsif speed2 > speed3 && speed2 > speed1
+#   puts "Person 2 was the fastest at #{speed2} m/s"
+# elsif speed1 > speed3 && speed1 > speed2
+#   puts "Person 1 was the fastest at #{speed1} m/s"
+# elsif speed1 == speed2 && speed2 == speed3
+#   puts "Everyone tied at #{speed1} m/s"
+# else
+#   puts "Well done everyone!"
+# end
+
+def get_speed(person)
+  puts "How far did #{person} run in meters? "
+  distance  = gets.to_f
+  puts "How long (in minutes) did #{person} take to run #{distance} meters?"
+  time = gets.to_f
+  speed = distance / (time * 60)
+end
+
+speed1 = get_speed("person1")
+speed2 = get_speed("person2")
+speed3 = get_speed("person3")
+
+if speed3 > speed2 && speed3 > speed1
+  puts "Person 3 was the fastest at #{speed3} m/s"
+elsif speed2 > speed3 && speed2 > speed1
+  puts "Person 2 was the fastest at #{speed2} m/s"
+elsif speed1 > speed3 && speed1 > speed2
+  puts "Person 1 was the fastest at #{speed1} m/s"
+elsif speed1 == speed2 && speed2 == speed3
+  puts "Everyone tied at #{speed1} m/s"
+else
+  puts 'Well done everyone!'
+end
